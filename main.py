@@ -1,6 +1,7 @@
 import requests
 import tkinter as tk
 from tkinter import messagebox, scrolledtext
+import threading
 
 class RDW_API:
     """Class for the RDW_API app."""
@@ -173,12 +174,23 @@ class RDW_API:
             messagebox.showerror("Fout", "Vul een kenteken in")
             return
         
+        # Start a thread to prevent UI Freeze
+        threading.Thread(target=self.fetch_and_display, args=(kenteken,), daemon=True).start()
+        
+    def fetch_and_display(self, kenteken):
+        """Runs in background thread to avoid freezing"""
+
         params = {"kenteken": kenteken}
         headers = {"X-App-Token": self.API_KEY}
         
-        response = requests.get(self.BASE_URL, headers=headers, params=params)
+        # Do NOT clear output first, we wait until results are ready.
+        self.output_area.insert(tk.END, f"Gegevens ophalen voor {kenteken}...\n")
 
-        self.output_area.delete(1.0, tk.END)
+        try:
+            response = requests.get(self.BASE_URL, headers=headers, params=params)
+        except Exception as e:
+            self.output_area.insert(tk.END, f"\nFout tijdens ophalen {e}\n")
+            return
 
         if response.status_code != 200:
             self.output_area.insert(tk.END, f"API Fout: {response.status_code}")
@@ -192,12 +204,19 @@ class RDW_API:
         
         car = data[0]
 
+        # Now clear safely before adding new info.
+        self.output_area.delete(1.0, tk.END)
+        self.output_area.insert(tk.END, f"Resultaten voor {kenteken}:\n\n")
+
+        # Add results incrementally
         for key, value in car.items():
+
             if key not in self.FIELDS_TO_HIDE and self.should_display(key):
 
                 if key.endswith("_dt"):
                     value = value.split("T")[0]
 
+                # Insert one line at a time
                 self.output_area.insert(tk.END, f"{key}: {value}\n")
 
 
