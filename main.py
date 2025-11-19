@@ -114,7 +114,6 @@ class RDW_API:
             "aantal_cilinders",
             "aantal_deuren",
             "aantal_wielen",
-            "aantal_rolstoelplaatsen",
             "export_indicator",
             "taxi_indicator",
             "plaats_chassisnummer",
@@ -122,7 +121,11 @@ class RDW_API:
             "wielbasis",
             "cilinderinhoud",
             "europese_voertuigcategorie",
-            "type"
+            "type",
+            "breedte",
+            "aanhangwagen_middenas_geremd",
+            "aanhangwagen_autonoom_geremd",
+            "laadvermogen"
 
         ] and not self.show_specifications.get():
             return False
@@ -164,8 +167,6 @@ class RDW_API:
         
         return True
     # -------------------------------------------------------
-
-
     def license_plate_search(self):
         """Called when button is pressed."""
         kenteken = self.license_plate_entry.get().upper().replace("-","")
