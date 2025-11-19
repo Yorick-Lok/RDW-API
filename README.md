@@ -14,3 +14,6 @@ Filter out the unnecessary things from the API.
 
 # Step 5 (Finished)
 Add a filter with a couple of choices for the user to select the statistics they'd like to view.
+
+# Step 6 (Finished)
+Add background threading so the main program doesn't freeze anytime you try to load new data.
