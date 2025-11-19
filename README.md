@@ -12,5 +12,5 @@ Import the Tkinter library and start creating the app.
 # Step 4 (Finished)
 Filter out the unnecessary things from the API.
 
-# Step 5
-Add a customizable filter
+# Step 5 (Finished)
+Add a filter with a couple of choices for the user to select the statistics they'd like to view.
