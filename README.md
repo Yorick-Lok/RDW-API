@@ -17,3 +17,6 @@ Add a filter with a couple of choices for the user to select the statistics they
 
 # Step 6 (Finished)
 Add background threading so the main program doesn't freeze anytime you try to load new data.
+
+# Step 7 (Finished)
+Categorize everything so the output looks clean and is easier to read.
