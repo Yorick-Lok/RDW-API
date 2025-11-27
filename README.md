@@ -20,3 +20,10 @@ Add background threading so the main program doesn't freeze anytime you try to l
 
 # Step 7 (Finished)
 Categorize everything so the output looks clean and is easier to read.
+
+# Step 8 (Finished)
+Add Motor Vehicle Tax determined by province.
+If diesel, it also depends on the year of construction.
+
+# Step 9 (Finished)
+Get rid of the tax for vehicles over 40 years old.
