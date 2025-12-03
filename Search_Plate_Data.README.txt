@@ -1,6 +1,6 @@
-# License_Plate_Data
+# Search_Plate_Data
 
-Welcome to this README, I will now explain how License_Plate_Data.py works and how to use it.
+Welcome to this README, I will now explain how Search_Plate_Data.py works and how to use it.
 _________________________________________________________________________________________________________
 
 What you want to do first is run the file.
