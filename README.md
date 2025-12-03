@@ -1,29 +1,6 @@
-# RDW-API
+Welcome to my first project using an API,
+This is made using open data from the Dutch Vehicle Authority (RDW)
 
-# Step 1 (Finished)
-Research how to get the information needed from outside of the script.
+In License_Plate_Data.py, you can enter a license plate of a car, and view its data.
+There's checkboxes for filtering so it's overall easier to read.
 
-# Step 2 (Finished)
-Start making the code, get the proper imports. But don't make it an app just yet.
-
-# Step 3 (Finished)
-Import the Tkinter library and start creating the app.
-
-# Step 4 (Finished)
-Filter out the unnecessary things from the API.
-
-# Step 5 (Finished)
-Add a filter with a couple of choices for the user to select the statistics they'd like to view.
-
-# Step 6 (Finished)
-Add background threading so the main program doesn't freeze anytime you try to load new data.
-
-# Step 7 (Finished)
-Categorize everything so the output looks clean and is easier to read.
-
-# Step 8 (Finished)
-Add Motor Vehicle Tax determined by province.
-If diesel, it also depends on the year of construction.
-
-# Step 9 (Finished)
-Get rid of the tax for vehicles over 40 years old.
