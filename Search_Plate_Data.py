@@ -89,7 +89,7 @@ class RDW_API:
 
     def __init__(self, root):
         self.root = root
-        self.root.title("RDW API")
+        self.root.title("Search Plate Data")
         self.root.geometry("750x900")
         self.car_cache = None
         self.create_widgets()
